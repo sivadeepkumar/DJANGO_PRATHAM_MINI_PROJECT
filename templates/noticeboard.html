@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block start %}
+<h1 class="text-center bg-light">Notices Board</h1>
+<ul style="list-style-type: none;">
+    {% for i in Noticeboards %}
+    <div class="d-flex flex-row justify-content-around">
+        <li>{{i.id}}</li>
+        <li>{{i.notice}}</li>
+        <li>{{i.message}}</li>
+        <li>{{i.user}}</li>
+    </div>
+    {% endfor %}
+</ul>
+{% if request.user.last_name != 'student' %}
+<a href="{% url 'dummy' %}" class="btn btn-dark">Back to Home</a>
+{% endif %}
+{% endblock %}
+  

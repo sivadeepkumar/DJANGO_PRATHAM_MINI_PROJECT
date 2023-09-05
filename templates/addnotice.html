@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block start %}
+  <h2>Add Notice</h2>
+  <form method="POST">
+    {%  csrf_token %}
+    <label>Notice Title</label>
+    <input name="notice"  />
+    <br/>
+    <br/>
+    <label>Add Message</label>
+    <input name="message"  />
+    <br/>
+    <br/>
+    
+   
+    
+    <button type="submit">Send Notice</button>
+  </form>
+  
+{% endblock %}
+  

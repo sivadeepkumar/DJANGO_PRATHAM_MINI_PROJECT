@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block start %}
+<br/>
+<br/>
+<h2 class="text-center">Users Details</h2>
+<hr/>
+  <ul>
+    {% for user in users %}
+    <div class="d-flex flex-row justify-content-around">
+        <li class="mr-5">{{ user.username }}{{ user.id }}</li><a class="ml-5" style="text-decoration: none;" href="{% url 'addnotice' user.id %}">Create Notice</a>
+
+    </div>
+    {% empty %}
+      <li>No notices available.</li>
+    {% endfor %}
+    
+  </ul>
+{% endblock %}
+  
